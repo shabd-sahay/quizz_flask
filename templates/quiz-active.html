@@ -1,0 +1,64 @@
+<!-- quiz-active.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Quiz</title>
+    <style>
+      /* styles.css */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 8px;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="card">
+            {% if quiz %}
+                <h1>Active Quiz</h1>
+                <h2>{{ quiz.question }}</h2>
+                <p>Options:</p>
+                <ul>
+                    {% for option in quiz.options.split(',') %}
+                        <li>{{ option }}</li>
+                    {% endfor %}
+                </ul>
+                <p>Start Date: {{ quiz.startDate }}</p>
+                <p>End Date: {{ quiz.endDate }}</p>
+            {% else %}
+                <p class="error-message">No active quiz currently.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

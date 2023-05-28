@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Quizzes</title>
+  <link rel="stylesheet" type="text/css" href="../static/styles.css">
+  <style>
+    /* styles.css */
+
+.quiz-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #f7f7f7;
+}
+
+.quiz-card h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.quiz-card p {
+  margin: 8px 0;
+}
+
+.quiz-card:last-child {
+  margin-bottom: 0;
+}
+
+  </style>
+</head>
+<body>
+  <h1>All Quizzes</h1>
+  
+  <div id="quiz-list" class="quiz-list">
+    {% for quiz in quizzes %}
+<div class="card">
+  <div class="card-header">
+    {{ quiz['question'] }}
+  </div>
+  <div class="card-body">
+    <p class="card-text">Options: {{ quiz['options'] }}</p>
+    <p class="card-text">Start Date: {{ quiz['startDate'] }}</p>
+    <p class="card-text">End Date: {{ quiz['endDate'] }}</p>
+    <a href="/quizzes/{{ quiz['id'] }}/result" class="btn btn-primary">View Result</a>
+  </div>
+</div>
+{% endfor %}
+
+  </div>
+</body>
+</html>

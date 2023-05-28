@@ -1,0 +1,44 @@
+<!-- quiz-result.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Result</title>
+  <style>
+    .card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-result {
+  font-size: 16px;
+  font-weight: bold;
+  margin: auto;
+}
+
+  </style>
+</head>
+<body>
+  
+  <div class="card card-result card-content">
+    <h2>Quiz Result</h2>
+    <p>Quiz ID: {{ quiz_id }}</p>
+    <p>Result: {{ result }}</p>
+  </div>
+</body>
+</html>
